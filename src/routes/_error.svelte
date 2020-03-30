@@ -36,7 +36,7 @@
 
 <p>{error.message}</p>
 
-<p>Our hamster powered toasters are malfunctioning, sorry ;-(</p>
+<p>Our ninja monkeys stole the server... help</p>
 
 {#if dev && error.stack}
   <pre>{error.stack}</pre>
