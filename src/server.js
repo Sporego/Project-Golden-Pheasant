@@ -14,10 +14,13 @@ express()
     auth({
       required: false,
       auth0Logout: true,
-      baseURL: 'http://localhost:3000',
-      issuerBaseURL: 'https://your-hosted-url.auth0.com',
-      clientID: 'your-client-id',
-      appSessionSecret: 'your-session-secret'
+      baseURL: process.env.BASE_URL,
+      issuerBaseURL: process.env.ISSUER_BASE_URL,
+      clientID: process.env.CLIENT_ID,
+      appSession: {
+        secret:
+        process.env.SECRET
+      }
     }),
     (req, res, next) => {
       return sapper.middleware({
