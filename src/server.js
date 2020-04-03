@@ -18,8 +18,7 @@ express()
       issuerBaseURL: process.env.ISSUER_BASE_URL,
       clientID: process.env.CLIENT_ID,
       appSession: {
-        secret:
-        process.env.SECRET
+        secret: process.env.SECRET
       }
     }),
     (req, res, next) => {
