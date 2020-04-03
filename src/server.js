@@ -4,6 +4,15 @@ import compression from 'compression';
 import * as sapper from '@sapper/server';
 import { auth } from 'express-openid-connect';
 
+import dotenv from 'dotenv';
+const result = dotenv.config();
+
+if (result.error) {
+  throw result.error;
+}
+
+console.log(result.parsed);
+
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
@@ -35,3 +44,5 @@ express()
   .listen(PORT, err => {
     if (err) console.log('error', err);
   });
+
+console.log(process.env.SECRET);
