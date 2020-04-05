@@ -15,7 +15,18 @@ const dev = NODE_ENV === 'development';
 import connectSessionSequelize from 'connect-session-sequelize';
 const SequelizeSessionStore = connectSessionSequelize(session.Store);
 
-// const sequelize = new Sequelize(configSQL);
+const sequelize = new Sequelize(process.env.DATABASE_URL);
+
+function sequelizeTest() {
+  return new Promise(
+    (resolve) => {
+      console.log('Connection has been established successfully.');
+    },
+    (reject) => {
+      console.log('error cannot auth postgres');
+    }
+  );
+}
 
 express()
   .use(
