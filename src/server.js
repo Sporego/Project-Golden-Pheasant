@@ -15,7 +15,7 @@ const dev = NODE_ENV === 'development';
 import connectSessionSequelize from 'connect-session-sequelize';
 const SequelizeSessionStore = connectSessionSequelize(session.Store);
 
-const sequelize = new Sequelize(configSQL);
+// const sequelize = new Sequelize(configSQL);
 
 express()
   .use(
