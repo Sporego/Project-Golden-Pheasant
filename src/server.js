@@ -4,10 +4,18 @@ import compression from 'compression';
 import * as sapper from '@sapper/server';
 import { auth } from 'express-openid-connect';
 
+import Sequelize from 'sequelize';
+import session from 'express-session';
+
 import dotenv from 'dotenv/config';
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
+
+import connectSessionSequelize from 'connect-session-sequelize';
+const SequelizeSessionStore = connectSessionSequelize(session.Store);
+
+const sequelize = new Sequelize()
 
 express()
   .use(
