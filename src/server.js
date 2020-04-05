@@ -7,12 +7,6 @@ import { auth } from 'express-openid-connect';
 import dotenv from 'dotenv';
 const result = dotenv.config();
 
-if (result.error) {
-  throw result.error;
-}
-
-console.log(result.parsed);
-
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
@@ -27,21 +21,21 @@ express()
       issuerBaseURL: process.env.ISSUER_BASE_URL,
       clientID: process.env.CLIENT_ID,
       appSession: {
-        secret: process.env.SECRET
-      }
+        secret: process.env.SECRET,
+      },
     }),
     (req, res, next) => {
       return sapper.middleware({
         session: () => {
           return {
             isAuthenticated: req.isAuthenticated(),
-            user: req.openid.user
+            user: req.openid.user,
           };
-        }
+        },
       })(req, res, next);
     }
   )
-  .listen(PORT, err => {
+  .listen(PORT, (err) => {
     if (err) console.log('error', err);
   });
 
