@@ -12,10 +12,13 @@ import dotenv from 'dotenv/config';
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
+import parse from 'pg-connection-string.parse';
+const configSQL = parse(process.env.DATA_BASE_URL);
+
 import connectSessionSequelize from 'connect-session-sequelize';
 const SequelizeSessionStore = connectSessionSequelize(session.Store);
 
-const sequelize = new Sequelize(process.env.DATA_BASE_URL);
+const sequelize = new Sequelize(configSQL);
 
 express()
   .use(
