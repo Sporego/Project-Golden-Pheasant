@@ -4,8 +4,7 @@ import compression from 'compression';
 import * as sapper from '@sapper/server';
 import { auth } from 'express-openid-connect';
 
-import dotenv from 'dotenv';
-const result = dotenv.config();
+import dotenv from 'dotenv/config';
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
