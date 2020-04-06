@@ -15,18 +15,7 @@ const dev = NODE_ENV === 'development';
 import connectSessionSequelize from 'connect-session-sequelize';
 const SequelizeSessionStore = connectSessionSequelize(session.Store);
 
-const sequelize = new Sequelize(process.env.DATABASE_URL);
-
-function sequelizeTest() {
-  return new Promise(
-    (resolve) => {
-      console.log('Connection has been established successfully.');
-    },
-    (reject) => {
-      console.log('error cannot auth postgres');
-    }
-  );
-}
+let sequelize = new Sequelize(process.env.DATABASE_URL);
 
 express()
   .use(
@@ -35,12 +24,10 @@ express()
     auth({
       required: false,
       auth0Logout: true,
-      baseURL: process.env.BASE_URL,
-      issuerBaseURL: process.env.ISSUER_BASE_URL,
-      clientID: process.env.CLIENT_ID,
-      appSession: {
-        secret: process.env.SECRET,
-      },
+      baseURL: 'https://triage.care',
+      issuerBaseURL: 'https://project-golden-pheasant.auth0.com',
+      clientID: 'O0s6aOAZ77sIiMawD76ukFOP7BjeKZGe',
+      appSessionSecret: process.env.SECRET,
     }),
     (req, res, next) => {
       return sapper.middleware({
