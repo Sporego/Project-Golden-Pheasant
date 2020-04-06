@@ -27,7 +27,7 @@ express()
       baseURL: 'https://triage.care',
       issuerBaseURL: 'https://project-golden-pheasant.auth0.com',
       clientID: 'O0s6aOAZ77sIiMawD76ukFOP7BjeKZGe',
-      appSessionSecret: process.env.SECRET,
+      appSession: { secret: process.env.SECRET },
     }),
     (req, res, next) => {
       return sapper.middleware({
