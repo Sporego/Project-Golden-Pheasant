@@ -21,7 +21,6 @@
     "express-session": "^1.17.0",
     "pg": "^8.0.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.6",
     "sirv": "^0.4.2"
   },
   "devDependencies": {

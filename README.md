@@ -1,16 +1,14 @@
 ### Golden-Pheasant
 
-<details><summary>CLICK ME</summary>
+<details><summary>Development Status</summary>
 <p>
 
 #### Development Progress
 
 ```python
-/login
-/user
-/request
-/supply
-/hub
+## Backend
+[x] User
+## Frontend
 
 
 
