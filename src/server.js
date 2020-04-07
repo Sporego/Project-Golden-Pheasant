@@ -2,7 +2,6 @@ import sirv from 'sirv';
 import express from 'express';
 import compression from 'compression';
 import * as sapper from '@sapper/server';
-import { auth } from 'express-openid-connect'; //Test
 import dotenv from 'dotenv/config';
 
 const { PORT, NODE_ENV } = process.env;
@@ -12,21 +11,10 @@ express()
   .use(
     compression({ threshold: 0 }),
     sirv('static', { dev }),
-    auth({
-      required: false,
-      auth0Logout: true,
-      baseURL: 'https://triage.care',
-      issuerBaseURL: 'https://project-golden-pheasant.auth0.com',
-      clientID: 'O0s6aOAZ77sIiMawD76ukFOP7BjeKZGe',
-      appSession: { secret: process.env.SECRET },
-    }),
     (req, res, next) => {
       return sapper.middleware({
         session: () => {
-          return {
-            isAuthenticated: req.isAuthenticated(),
-            user: req.openid.user,
-          };
+          return {};
         },
       })(req, res, next);
     }
