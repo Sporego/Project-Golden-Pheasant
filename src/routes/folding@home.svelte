@@ -14,6 +14,9 @@
 
 <h1>Setup</h1>
 
+<p>Join Our folding@home team!</p>
+<p>Team Code: 259912</p>
+
 <p>
 
   <a href="https://foldingathome.org/start-folding/">
