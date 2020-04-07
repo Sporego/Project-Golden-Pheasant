@@ -4,7 +4,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
   }
 </style>
 
@@ -22,7 +22,6 @@
   <br />
   <br />
   <a
-    id="tutorial"
     href="https://github.com/FoldingAtHome/fah-issues/files/4364298/FAHViewer-091713f412-windows-x86_64.zip"
     download>
     Windows_ViewerFixPatch_(FAHViewer_091713f412_windows_x86_64.zip)
@@ -33,5 +32,8 @@
   ^Extract and ovewrite into install directory to fix Viewer!
   <br />
   ^将下载后的补丁包解压缩并将两个文件拖入folding@home 下载文档覆盖现有文件
-  <img alt="Image guide for viewer patch on windows" src="tutorial.png" />
+  <img
+    id="tutorial"
+    alt="Image guide for viewer patch on windows"
+    src="tutorial.png" />
 </p>
