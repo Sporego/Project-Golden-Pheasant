@@ -7,10 +7,10 @@
   }
 
   h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
+    font-size: 2em;
     font-weight: 700;
     margin: 0 0 0.5em 0;
+    font-style: italic;
   }
 
   figure {
@@ -29,17 +29,22 @@
 
   @media (min-width: 480px) {
     h1 {
-      font-size: 4em;
+      font-size: 2em;
     }
   }
 </style>
 
 <svelte:head>
-  <title>Project Golden Pheasant</title>
+  <title>triage.care</title>
 </svelte:head>
 
-<h1>triage</h1>
-
+<h1>Welcome!</h1>
+<p>
+  <strong>Join Our folding@home team!</strong>
+</p>
+<p>
+  <strong>Team Code: 259912</strong>
+</p>
 <figure>
   <img alt="Triage Logo" src="triage.png" />
   <figcaption>triage.care > Logistics for Humanity</figcaption>
