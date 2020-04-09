@@ -67,10 +67,14 @@
 		     the blog data when we hover over the link or tap it on a touchscreen -->
     <li>
       <a
+        id="profile"
         rel="prefetch"
         aria-current={segment === 'blog' ? 'page' : undefined}
         href="blog">
-        blog
+        {#if login=true}
+        Logged In
+        {:else}
+        Login
       </a>
     </li>
   </ul>
