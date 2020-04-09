@@ -48,7 +48,7 @@
   }
 
   #avatar {
-    float:right
+    float: right;
   }
 </style>
 
@@ -71,7 +71,7 @@
 		     the blog data when we hover over the link or tap it on a touchscreen -->
     <li>
       <a
-      id="avatar"
+        id="avatar"
         rel="prefetch"
         aria-current={segment === 'blog' ? 'page' : undefined}
         href="blog">
@@ -83,10 +83,7 @@
         rel="prefetch"
         aria-current={segment === 'login' ? 'page' : undefined}
         href="blog">
-        {#if x=1}
-        Login
-        {:else}
-        Logout
+        {#if (x = 1)}Login{:else}Logout{/if}
       </a>
     </li>
   </ul>
