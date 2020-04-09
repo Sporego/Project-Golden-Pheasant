@@ -1,5 +1,6 @@
 <script>
   export let segment;
+  let x = 1;
 </script>
 
 <style>
