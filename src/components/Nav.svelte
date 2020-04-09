@@ -46,6 +46,10 @@
     padding: 1em 0.5em;
     display: block;
   }
+
+  #avatar {
+    float:right
+  }
 </style>
 
 <nav>
@@ -67,14 +71,22 @@
 		     the blog data when we hover over the link or tap it on a touchscreen -->
     <li>
       <a
-        id="profile"
+      id="avatar"
         rel="prefetch"
         aria-current={segment === 'blog' ? 'page' : undefined}
         href="blog">
-        {#if login=true}
-        Logged In
-        {:else}
+        blog
+      </a>
+    </li>
+    <li>
+      <a
+        rel="prefetch"
+        aria-current={segment === 'login' ? 'page' : undefined}
+        href="blog">
+        {#if x=1}
         Login
+        {:else}
+        Logout
       </a>
     </li>
   </ul>
